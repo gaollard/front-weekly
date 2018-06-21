@@ -1,0 +1,3 @@
+http_build_query
+
+根据字典产生一个 urlencode 之后的请求字符
