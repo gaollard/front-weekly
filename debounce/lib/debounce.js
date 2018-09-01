@@ -11,15 +11,6 @@ function debounce(func, wait, options) {
   let maxing = false
   let trailing = true
 
-  // Bypass `requestAnimationFrame` by explicitly setting `wait=0`.
-  
-  /*const useRAF = (!wait && wait !== 0 && typeof root.requestAnimationFrame === 'function')*/
-
-  /*
-  if (typeof func != 'function') {
-    throw new TypeError('Expected a function')
-  }*/
-
   wait = +wait || 0
 
   /*if (isObject(options)) {
@@ -40,19 +31,14 @@ function debounce(func, wait, options) {
   }
 
   function startTimer(pendingFunc, wait) {
-    /*if (useRAF) {
-      return root.requestAnimationFrame(pendingFunc)
-    }*/
     return setTimeout(pendingFunc, wait)
   }
 
   function cancelTimer(id) {
-    /*if (useRAF) {
-      return root.cancelAnimationFrame(id)
-    }*/
     clearTimeout(id)
   }
 
+  //
   function leadingEdge(time) {
     // Reset any `maxWait` timer.
     lastInvokeTime = time
@@ -104,28 +90,24 @@ function debounce(func, wait, options) {
     return result
   }
 
-  /*function cancel() {
-    if (timerId !== undefined) {
-      cancelTimer(timerId)
-    }
-    lastInvokeTime = 0
-    lastArgs = lastCallTime = lastThis = timerId = undefined
-  }*/
-
-  /*function flush() {
+  function flush() {
     return timerId === undefined ? result : trailingEdge(Date.now())
-  }*/
+  }
 
-  /*function pending() {
+  function pending() {
     return timerId !== undefined
-  }*/
+  }
 
   function debounced(...args) {
+    // 记录当前时间
     const time = Date.now()
+    // 是否应该invoke
     const isInvoking = shouldInvoke(time)
 
     lastArgs = args
     lastThis = this
+
+    // 刷新 call
     lastCallTime = time
 
     if (isInvoking) {
