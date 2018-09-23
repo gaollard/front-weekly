@@ -93,19 +93,52 @@ console.log(map1);
 // expected output: Array [2, 8, 18, 32]
 ```
 - pop
+
 pop()方法从数组中删除最后一个元素，并返回该元素的值。此方法更改数组的长度
 
-- [x] push:
-- [x] reduce:
-- reduceRight:
-- reverse:
-- shift:
-- slice:
-- [x] some:
-- sort:
-- splice:
+- [x] push
+
+push() 方法将一个或多个元素添加到数组的末尾，并返回新数组的长度
+
+- [x] reduce
+
+reduce() 方法对累加器和数组中的每个元素（从左到右）应用一个函数，将其简化为单个值。
+
+- [x] reduceRight
+
+reduceRight() 方法接受一个函数作为累加器（accumulator）和数组的每个值（从右到左）将其减少为单个值。
+
+- [x] reverse
+
+reverse() 方法将数组中元素的位置颠倒。第一个数组元素成为最后一个数组元素，最后一个数组元素成为第一个。
+
+- [x] shift
+
+shift() 方法从数组中删除第一个元素，并返回该元素的值。此方法更改数组的长度。
+
+- [x] slice
+
+slice() 方法返回一个从开始到结束（不包括结束）选择的数组的一部分浅拷贝到一个新数组对象。且原始数组不会被修改。
+
+- [x] some
+
+some() 方法测试数组中的某些元素是否通过由提供的函数实现的测试
+
+- [x] sort
+
+sort() 方法用原地算法对数组的元素进行排序，并返回数组。排序不一定是稳定的。默认排序顺序是根据字符串Unicode码点。
+
+由于它取决于具体实现，因此无法保证排序的时间和空间复杂性。
+
+- [x] splice
+
+splice() 方法通过删除现有元素和/或添加新元素来更改一个数组的内容。
+
 - toLocalString:
-- toString:
+- toString
+
+对数组的每一个元素
+
 - unshift:
 - Symbol(Symbol.iterator):
 - Symbol(Symbol.unscopables): 
