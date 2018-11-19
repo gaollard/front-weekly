@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <style>
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  </style>
+</head>
+<body>
+  <div class="box">
+
+  </div>
+</body>
+<script>
+  var moveJS = {
+    linear: function (from, to, duration, currentTime) {
+      return from + (to - from) / duration * currentTime
+    }
+  }
+  var from = 0, currentTime = 0, to = 300, duration = 1000;
+  var box = document.querySelector('.box')
+  var step = function () {
+      var value = moveJS.linear(from, to, duration, currentTime);
+      currentTime = currentTime + 1000/60;
+      box.style['marginLeft'] = value + 'px'
+      if (currentTime <= duration) {
+        requestAnimationFrame(step);
+      } else {
+      console.log('动画结束')
+    }
+  };
+  step()
+  setTimeout(() => {
+    console.log(1)
+  }, 1000)
+</script>
+</html>
